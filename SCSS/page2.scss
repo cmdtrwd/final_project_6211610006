@@ -1,0 +1,217 @@
+@use "reset.scss";
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+body {
+    color: aliceblue;
+    width: 100%;
+    height: auto;
+    background-color: black;
+
+    #nav {
+        color: white;
+        width: 100%;
+        height: 30vh;
+        background-color: black;
+        overflow: hidden;
+
+        @media only screen and (min-width: 768px) {
+            height: 25vh;
+        }
+
+        .logo {
+            padding-bottom: 50px;
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            top: 45px;
+            font-family: 'Dancing Script', cursive;
+
+            h1 {
+                font-size: 35px;
+                font-family: 'Dancing Script', cursive;
+
+                @media only screen and (min-width: 768px) {
+                    font-size: 50px;
+                }
+            }
+        }
+
+        .manu {
+
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            top: 150px;
+
+            &:hover {}
+
+            ul {
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+
+
+                //display: none;
+                li {
+                    cursor: pointer;
+                    font-family: 'Tangerine', cursive;
+                    font-size: 25px;
+                    transition: 1s ease-out;
+
+                    a {
+                        color: aliceblue;
+                    }
+
+                    &:hover {
+                        transform: scale(1.2, 1.2);
+
+
+                    }
+
+
+                }
+            }
+
+        }
+
+        @media only screen and (min-width: 768px) {
+
+            .logo {
+                width: 20%;
+                left: 0px;
+            }
+
+
+            .manu {
+                width: 40%;
+                position: absolute;
+                top: 40px;
+                right: 100px;
+
+                ul {
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+
+                    li {
+                        
+                        font-size: 30px;
+                        a{
+                            color: aliceblue;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+#all {
+    background-color: black;
+    width: 100%;
+    height: auto;
+    display: flex;
+
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        padding-bottom: 50px;
+    }
+
+    .one {
+        img {
+            width: 600px;
+            height: 400px;
+
+
+        }
+    }
+
+
+
+
+
+
+
+    #loader-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .loader {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            border: 4px solid #Fff;
+            animation: loader 2s infinite ease;
+
+
+            .load {
+                vertical-align: top;
+                display: inline-block;
+                width: 100%;
+                background-color: #fff;
+                animation: load 2s infinite ease-in;
+            }
+        }
+
+        @keyframes loader {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(180deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            75% {
+                transform: rotate(360deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes load {
+            0% {
+                height: 0%;
+            }
+
+            25% {
+                height: 0%;
+            }
+
+            50% {
+                height: 100%;
+            }
+
+            75% {
+                height: 100%;
+            }
+
+            100% {
+                height: 0%;
+            }
+        }
+
+    }
+}

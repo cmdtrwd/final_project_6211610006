@@ -1,0 +1,359 @@
+@use "reset.scss";
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+
+@mixin col-width ($width, $height) {
+    width: $width;
+    height: $height;
+
+}
+
+
+
+$color-1: #F0F8FF;
+$color-2:#373737;
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: $color-1;
+    font-family: 'Cormorant Garamond', serif;
+
+    header {
+
+        @include col-width(100%, 100vh);
+        background-color: black;
+        position: relative;
+
+        section {
+            img {
+                @include col-width(100%, 100vh);
+                opacity: 0.7;
+                overflow: hidden;
+                object-fit: cover;
+            }
+
+            h1 {
+                font-family: 'Tangerine', cursive;
+                width: 100%;
+                position: absolute;
+                top: 50%;
+                text-align: center;
+                font-size: 40px;
+
+
+                @media only screen and (min-width: 768px) {
+                    font-size: 80px;
+
+                }
+            }
+        }
+
+        nav {
+            overflow: hidden;
+
+            .logo {
+                text-align: center;
+                width: 100%;
+                position: absolute;
+                top: 25px;
+                
+
+                h1 {
+                    font-size: 35px;
+                    font-family: 'Dancing Script', cursive;
+                    @media only screen and (min-width: 768px){
+                         font-size: 50px;
+                    }
+                }
+            }
+
+            .manu {
+
+                width: 100%;
+                height: 100%;
+
+                position: absolute;
+                top: 100px;
+
+                &:hover {}
+
+                ul {
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+
+
+                   
+                    li {
+                        cursor: pointer;
+                        font-family: 'Tangerine', cursive;
+                        font-size: 25px;
+                        transition: 1s ease-out;
+                        a{
+                            color: aliceblue;
+                           
+                        }
+
+                        &:hover {
+                            transform: scale(1.2, 1.2);
+                        }
+                    }
+                }
+
+            }
+
+            @media only screen and (min-width: 768px) {
+
+                .logo {
+                    width: 20%;
+                    left: 0px;
+                }
+
+
+                .manu {
+                    width: 40%;
+                    position: absolute;
+                    top: 70px;
+                    right: 100px;
+
+                    ul {
+
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+
+                        li {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    .text {
+        background-color: #212020;
+
+        width: 100%;
+        height: auto;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media only screen and (min-width: 768px) {
+            height: 90vh;
+        }
+
+        .text-inner {
+            padding-top: 100px;
+            font-family: 'Sawarabi Mincho', sans-serif;
+            color: aliceblue;
+            width: 80%;
+
+            @media only screen and (min-width: 768px) {
+
+                width: 60%;
+
+            }
+
+            h1 {
+                padding-bottom: 30px;
+                text-align: center;
+                font-size: 40px;
+            }
+
+            p {
+                line-height: 40px;
+                padding-bottom: 100px;
+            }
+        }
+
+
+    }
+
+    .topic {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        background-color: #000000;
+        padding-top: 150px;
+        padding-bottom: 100px;
+        font-family: 'Tangerine', cursive;
+
+        h1 {
+            color: aliceblue;
+            font-size: 60px;
+        }
+    }
+
+
+
+    .dessert {
+        background-color: black;
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .de {
+            width: 100%;
+
+            @media only screen and (min-width: 768px) {
+                display: flex;
+                flex-direction: row;
+
+
+            }
+
+
+            img {
+                text-align: center;
+                width: 100%;
+                height: 300px;
+                object-fit: fill;
+                transition: 1s ease-out;
+
+                &:hover {
+                    transform: scale(1.1, 1.1);
+                }
+
+
+                @media only screen and (min-width: 768px) {
+                    width: 50%;
+                    height: 400px;
+
+
+
+                }
+
+
+            }
+        }
+    }
+
+
+
+    .below {
+        background-color: #212020;
+        width: 100%;
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 45px;
+
+        @media only screen and (min-width: 768px) {}
+
+        .below-inner {
+            width: 80%;
+
+            @media only screen and (min-width: 768px) {
+                width: 50%;
+            }
+
+            p {
+                text-align: center;
+                font-family: 'Tangerine', cursive;
+                font-size: 40px;
+            }
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+    #loader-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .loader {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            border: 4px solid #Fff;
+            animation: loader 2s infinite ease;
+
+
+            .load {
+                vertical-align: top;
+                display: inline-block;
+                width: 100%;
+                background-color: #fff;
+                animation: load 2s infinite ease-in;
+            }
+        }
+
+        @keyframes loader {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(180deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            75% {
+                transform: rotate(360deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes load {
+            0% {
+                height: 0%;
+            }
+
+            25% {
+                height: 0%;
+            }
+
+            50% {
+                height: 100%;
+            }
+
+            75% {
+                height: 100%;
+            }
+
+            100% {
+                height: 0%;
+            }
+        }
+
+    }
+
+}
